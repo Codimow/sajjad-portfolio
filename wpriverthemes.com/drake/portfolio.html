@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sajjad - Projects</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        :root {
+            --primary-color: #6a1b9a;
+            --secondary-color: #9c27b0;
+            --background-color: #0a0a0a;
+            --text-color: #ffffff;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        .wave {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            z-index: -1;
+        }
+
+        .wave svg {
+            position: relative;
+            display: block;
+            width: calc(131% + 1.3px);
+            height: 144px;
+        }
+
+        .wave .shape-fill {
+            fill: var(--primary-color);
+        }
+
+        header {
+            background-color: rgba(30, 30, 30, 0.8);
+            color: var(--text-color);
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 3rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-top: 0.5rem;
+            opacity: 0.8;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.5rem;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .portfolio-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(106, 27, 154, 0) 0%, rgba(106, 27, 154, 0.8) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .portfolio-item:hover::after {
+            opacity: 1;
+        }
+
+        .portfolio-item:nth-child(5n+1) {
+            animation: fadeInScale 0.6s ease-out both;
+        }
+
+        .portfolio-item:nth-child(5n+2) {
+            animation: fadeInScale 0.6s ease-out 0.2s both;
+        }
+
+        .portfolio-item:nth-child(5n+3) {
+            animation: fadeInScale 0.6s ease-out 0.4s both;
+        }
+
+        .portfolio-item:nth-child(5n+4) {
+            animation: fadeInScale 0.6s ease-out 0.6s both;
+        }
+
+        .portfolio-item:nth-child(5n) {
+            animation: fadeInScale 0.6s ease-out 0.8s both;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wave">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        </svg>
+    </div>
+    <header>
+        <h1>Sajjad Projects</h1>
+        <p class="subtitle">Bringing ideas to life through visual storytelling</p>
+    </header>
+    <main class="portfolio-grid">
+        <div class="portfolio-item">
+            <img src="/wpriverthemes.com/drake/wp-content/uploads/2023/03/design1.jpg" alt="Project 1">
+        </div>
+        <div class="portfolio-item">
+            <img src="/wpriverthemes.com/drake/wp-content/uploads/2023/03/design2.jpg" alt="Project 2">
+        </div>
+        <div class="portfolio-item">
+            <img src="/wpriverthemes.com/drake/wp-content/uploads/2023/03/design3.jpg" alt="Project 3">
+        </div>
+        <div class="portfolio-item">
+            <img src="/wpriverthemes.com/drake/wp-content/uploads/2023/03/design4.jpg" alt="Project 4">
+        </div>
+        <div class="portfolio-item">
+            <img src="/wpriverthemes.com/drake/wp-content/uploads/2023/03/design5.jpg" alt="Project 5">
+        </div>
+        <div class="portfolio-item">
+            <img src="https://media.discordapp.net/attachments/1297190044636942337/1297190826673438790/f1ee2640-480e-4377-a77e-500b905021b0.jpg?ex=67afeed9&is=67ae9d59&hm=1362801d2bfb2f54bccbc8044e21e6875bc93fa5e996f6a0253ad9b22c75ccd4&=&format=webp&width=465&height=450" alt="Project 6">
+        </div>
+        <div class="portfolio-item">
+            <img src="https://media.discordapp.net/attachments/1297191323664908421/1297193027206385664/22c69bea-30a2-42d5-b907-9d4bd28f6628.jpg?ex=67aff0e6&is=67ae9f66&hm=81cdd737a31bfec67dac3c7ed68095fe8a0cdc7971a4cb171a818833c1ca5c3a&=&format=webp&width=450&height=450" alt="Project 7">
+        </div>
+        <div class="portfolio-item">
+            <img src="https://media.discordapp.net/attachments/1297191778000179201/1297192496681717810/235_social_media.jpg?ex=67aff067&is=67ae9ee7&hm=a10629534b1a53cb041a62fa47cdf90491fb385205dcbc387f750c27678fe829&=&format=webp&width=450&height=450" alt="Project 8">
+        </div>
+        <div class="portfolio-item">
+            <img src="https://media.discordapp.net/attachments/1297193801319846000/1297194293013778564/p12_up.jpg?ex=67aff214&is=67aea094&hm=e1a777933cb325b849bfa053b7f39f99a4fe5202ee1183ce264d8f09dbff40ae&=&format=webp&width=456&height=450" alt="Project 9">
+        </div>
+        <div class="portfolio-item">
+            <img src="https://media.discordapp.net/attachments/1297193801319846000/1297194148079603752/4543031.jpg?ex=67aff1f1&is=67aea071&hm=05420f81d80b9d2a5a8f281280f15054b762114a2adc9e3df296ded9febef375&=&format=webp&width=450&height=450" alt="Project 10">
+        </div>
+        <div class="portfolio-item">
+            <img src="https://media.discordapp.net/attachments/1297190044636942337/1297190186576511006/ce4edb07-8912-465e-9c07-cff2ca45d19c.jpg?ex=67afee41&is=67ae9cc1&hm=04c1a251052a2255b1104342365b441d91cda46ea5d9ca6f33c443761aa38811&=&format=webp&width=465&height=450" alt="Project 11">
+        </div>
+        
+        <div class="portfolio-item">
+            <img src="https://media.discordapp.net/attachments/1297187645012709436/1297189093641424977/social_media_post_154.jpg?ex=67afed3c&is=67ae9bbc&hm=2a24eecbddab536fcdc76411ad633ff880bd2c7601854722c18e10bb72c3a36f&=&format=webp&width=450&height=450" alt="Project 12">
+        </div>
+        <div class="portfolio-item">
+            <img src="https://media.discordapp.net/attachments/1297187645012709436/1297189222675124224/social_media_post_126.jpg?ex=67afed5b&is=67ae9bdb&hm=c7b606971c1b0dc3622aff881b1568805f80d90d9ae032db801c21df0167037c&=&format=webp&width=450&height=450" alt="Project 13">
+        </div>
+        <div class="portfolio-item">
+            <img src="https://media.discordapp.net/attachments/1297190044636942337/1297190299621134387/04ddf0f7-c4c2-465f-86fb-6cee5fa66a20.jpg?ex=67afee5c&is=67ae9cdc&hm=cc4fccc78ca034e159380853a93956fa74682f229f68fefd035a2353cc5a7342&=&format=webp&width=450&height=450" alt="Project 14">
+        </div>
+        <div class="portfolio-item">
+            <img src="https://media.discordapp.net/attachments/1297191323664908421/1297193298670256218/d0d8832d-8370-4981-8b94-200968e65595.jpg?ex=67aff127&is=67ae9fa7&hm=e5ceb34e60230c3d79fca5f02ca31025be5d1ec6fc4c23716745b740c95fc09c&=&format=webp&width=450&height=450" alt="Project 15">
+        </div>
+        <div class="portfolio-item">
+            <img src="https://media.discordapp.net/attachments/1297191323664908421/1297193275110981642/979f45ea-2b2d-4951-b9d3-bce3277d982f.jpg?ex=67aff121&is=67ae9fa1&hm=3ad48ae972445b77ce9ad852c625bb0725e3cc9e62ded10a37e77e9ed21bc4bc&=&format=webp&width=450&height=450" alt="Project 16">
+        </div>
+        <div class="portfolio-item">
+            <img src="https://media.discordapp.net/attachments/1297191323664908421/1297192937750528080/4f0e3e47-f315-490a-9efb-7099ef4f859a.jpg?ex=67aff0d1&is=67ae9f51&hm=b23f1fb166da4fd72d76a5ff7b5a711a6ca4570339dd3e06b1117152e460a8d0&=&format=webp&width=450&height=450" alt="Project 17">
+        </div>
+        <div class="portfolio-item">
+            <img src="https://media.discordapp.net/attachments/1297191323664908421/1297192879898230855/8395337a-3edb-4048-9906-41fdfa4763ef.jpg?ex=67aff0c3&is=67ae9f43&hm=8dd7c5e77c10cb8e20d645edea952fe74af60a97309afa69cf7919ad42349d76&=&format=webp&width=450&height=450" alt="Project 18">
+        </div>
+        <div class="portfolio-item">
+            <img src="https://media.discordapp.net/attachments/1297191323664908421/1297191592142176346/36.jpg?ex=67afef90&is=67ae9e10&hm=8cfc4227ea0afbe1279099a613c2450ed656de502bde510ee1285f4ab2a35164&=&format=webp&width=450&height=450" alt="Project 19">
+        </div>
+        <div class="portfolio-item">
+            <img src="https://media.discordapp.net/attachments/1297191323664908421/1297191509812056064/221.jpg?ex=67afef7c&is=67ae9dfc&hm=bcc579f43bb0d80fb5a736ebd1a25817440fb16f5bbc3547565464c8ac2d5aaf&=&format=webp&width=463&height=450" alt="Project 20">
+        </div>
+    </main>
+</body>
+</html>

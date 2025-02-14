@@ -12,6 +12,42 @@
  * Date: 2016-05-20T17:23Z
  */
 
+document.addEventListener("DOMContentLoaded", function() {
+	const cursor = document.createElement("div");
+	cursor.classList.add("cursor");
+	document.body.appendChild(cursor);
+
+	document.addEventListener("mousemove", (e) => {
+		cursor.style.left = `${e.clientX}px`;
+		cursor.style.top = `${e.clientY}px`;
+	});
+
+	document.addEventListener("mousedown", () => {
+		cursor.classList.add("cursor--clicked");
+	});
+
+	document.addEventListener("mouseup", () => {
+		cursor.classList.remove("cursor--clicked");
+	});
+
+	document.querySelectorAll("a, button").forEach((el) => {
+		el.addEventListener("mouseover", () => {
+			cursor.classList.add("cursor--link-hover");
+		});
+		el.addEventListener("mouseout", () => {
+			cursor.classList.remove("cursor--link-hover");
+		});
+	});
+
+	document.addEventListener("mouseleave", () => {
+		cursor.classList.add("cursor--hidden");
+	});
+
+	document.addEventListener("mouseenter", () => {
+		cursor.classList.remove("cursor--hidden");
+	});
+});
+
 (function( global, factory ) {
 
 	if ( typeof module === "object" && typeof module.exports === "object" ) {
